@@ -148,191 +148,41 @@ while True:
 							    config=config_wav,
 							    audio=audgoog
 							)
-                    print('test')
+#                    print('test')
                     print(response_standard_wav)
                     fstrgoogtran=response_standard_wav.results[0].alternatives[0].transcript
                     fstrgoogconf=response_standard_wav.results[0].alternatives[0].confidence
-                    print('Google English:',fstrgoogtran)
-                    print('confidence:',fstrgoogconf)
+#                    print('Google English:',fstrgoogtran)
+#                    print('confidence:',fstrgoogconf)
                     MyText.append(fstrgoogtran)
                     confident.append(float(fstrgoogconf))
                     lang.append('en')
-                    #Chinese
-                with open("text.wav","rb") as audwav:
-                    goog=audwav.read()
-                    audgoog=speech.RecognitionAudio(content=goog)
-                    config_wav = speech.RecognitionConfig(
-	     			sample_rate_hertz=44100,
-		 			enable_automatic_punctuation=True,
-					language_code='zh',
-					audio_channel_count=1
-				)
-                    response_standard_wav = clientSTT.recognize(
-					config=config_wav,
-					audio=audgoog
-					)
-                    print(response_standard_wav)
-                    fstrgoogtran=response_standard_wav.results[0].alternatives[0].transcript
-                    fstrgoogconf=response_standard_wav.results[0].alternatives[0].confidence
-                    print('Google Chinese:',fstrgoogtran)
-                    print('confidence:',fstrgoogconf)
-                    MyText.append(fstrgoogtran)
-                    confident.append(float(fstrgoogconf))
-                    lang.append('zh')
-                    #Korean
-                with open("text.wav","rb") as audwav:
-                    goog=audwav.read()
-                    audgoog=speech.RecognitionAudio(content=goog)
-                    config_wav = speech.RecognitionConfig(
-				    sample_rate_hertz=44100,
-					enable_automatic_punctuation=True,
-					language_code='ko',
-					audio_channel_count=1
-					)
-                    response_standard_wav = clientSTT.recognize(
-					config=config_wav,
-					audio=audgoog
-					)
-                    print(response_standard_wav)
-                    fstrgoogtran=response_standard_wav.results[0].alternatives[0].transcript
-                    fstrgoogconf=response_standard_wav.results[0].alternatives[0].confidence
-                    print('Google Korean:',fstrgoogtran)
-                    print('confidence:',fstrgoogconf)
-                    MyText.append(fstrgoogtran)
-                    confident.append(float(fstrgoogconf))
-                    lang.append('ko')
-                    #Japanese
-                with open("text.wav","rb") as audwav:
-                    goog=audwav.read()
-                    audgoog=speech.RecognitionAudio(content=goog)
-                    config_wav = speech.RecognitionConfig(
-					sample_rate_hertz=44100,
-					enable_automatic_punctuation=True,
-					language_code='ja',
-					audio_channel_count=1
-					)
-                    response_standard_wav = clientSTT.recognize(
-					config=config_wav,
-					audio=audgoog
-					)
-                    print(response_standard_wav)
-                    fstrgoogtran=response_standard_wav.results[0].alternatives[0].transcript
-                    fstrgoogconf=response_standard_wav.results[0].alternatives[0].confidence
-                    print('Google Japanese:',fstrgoogtran)
-                    print('confidence:',fstrgoogconf)
-                    MyText.append(fstrgoogtran)
-                    confident.append(float(fstrgoogconf))
-                    lang.append('ja')
-                    #Spanish
-                with open("text.wav","rb") as audwav:
-                    goog=audwav.read()
-                    audgoog=speech.RecognitionAudio(content=goog)
-                    config_wav = speech.RecognitionConfig(
-            	        sample_rate_hertz=44100,
-						enable_automatic_punctuation=True,
-						language_code='es-ES',
-						audio_channel_count=1
-					)
-                    response_standard_wav = clientSTT.recognize(
-						config=config_wav,
-						audio=audgoog
-					)
-                    print(response_standard_wav)
-                    fstrgoogtran=response_standard_wav.results[0].alternatives[0].transcript
-                    fstrgoogconf=response_standard_wav.results[0].alternatives[0].confidence
-                    print('Google Spanish:',fstrgoogtran)
-                    print('confidence:',fstrgoogconf)
-                    MyText.append(fstrgoogtran)
-                    confident.append(float(fstrgoogconf))
-                    lang.append('es-ES')
-                with open("text.wav","rb") as audwav:
-                	    goog=audwav.read()
-            	        audgoog=speech.RecognitionAudio(content=goog)
-            	        config_wav = speech.RecognitionConfig(
-						sample_rate_hertz=44100,
-						enable_automatic_punctuation=True,
-						language_code='de',
-						audio_channel_count=1
-					)
-                    response_standard_wav = clientSTT.recognize(
-						config=config_wav,
-						audio=audgoog
-					)
-                    print(response_standard_wav)
-                    fstrgoogtran=response_standard_wav.results[0].alternatives[0].transcript
-                    fstrgoogconf=response_standard_wav.results[0].alternatives[0].confidence
-                    print('Google German:',fstrgoogtran)
-                    print('confidence:',fstrgoogconf)
-                    MyText.append(fstrgoogtran)
-                    confident.append(float(fstrgoogconf))
-                    lang.append('de-DE')
-                    #French
-                with open("text.wav","rb") as audwav:
-                    goog=audwav.read()
-                    audgoog=speech.RecognitionAudio(content=goog)
-                    config_wav = speech.RecognitionConfig(
-						sample_rate_hertz=44100,
-						enable_automatic_punctuation=True,
-						language_code='fr',
-						audio_channel_count=1
-					)
-                    response_standard_wav = clientSTT.recognize(
-						config=config_wav,
-						audio=audgoog
-					)
-                    print(response_standard_wav)
-                    fstrgoogtran=response_standard_wav.results[0].alternatives[0].transcript
-                    fstrgoogconf=response_standard_wav.results[0].alternatives[0].confidence
-                    print('Google French:',fstrgoogtran)
-                    print('confidence:',fstrgoogconf)
-                    MyText.append(fstrgoogtran)
-                    confident.append(float(fstrgoogconf))
-                    lang.append('fr')
-                          
+			
+			
+#please make changes to the code if you want to achieve multi-language SST capability
+#for example, ctrl c+ ctrl v and change the language code
+#or if you like maybe change 'rb' into 'r'
 
-					#Google STT for cantonese
-                with open("text.wav","rb") as audwav:
-                    goog=audwav.read()
-                    audgoog=speech.RecognitionAudio(content=goog)
-                    config_wav = speech.RecognitionConfig(
-	        	        sample_rate_hertz=44100,
-                        enable_automatic_punctuation=True,
-                        language_code='yue-HK',
-                        audio_channel_count=1
-                  	)
-                    response_standard_wav = clientSTT.recognize(
-                       	config=config_wav,
-                       	audio=audgoog
-					)
-                    print(response_standard_wav)
-                    fstrgoogtran=response_standard_wav.results[0].alternatives[0].transcript
-                    fstrgoogconf=response_standard_wav.results[0].alternatives[0].confidence
-                    print('Google:',fstrgoogtran)
-                    print('confidence:',fstrgoogconf)
-                    MyText.append(fstrgoogtran)
-                    confident.append(float(fstrgoogconf))
-                    lang.append("yue-HK")
-                    print(confident)
+
                     choice=max(confident)
-                    print(choice)
-                    print('the languages are:',lang)
-                    print('the texts are:',MyText)
-                        
+#                    print('the languages are:',lang)
+#                    print('the texts are:',MyText)
+#                        
                     for i in range(len(confident)):
                         if choice == confident[i]:
                                 choice = i
                                 break
                         else: continue
-                    print('the text with highest conf is:',MyText[choice])
+#                    print('the text with highest conf is:',MyText[choice])
                     translate_client =translate_v2.Client()
-                    print('f:',choice)
+#                    print('f:',choice)
                     query=MyText[choice]
-                    print('The query is:',query)
+#                    print('The query is:',query)
                     flang=lang[choice]
-                    print('final langeuage is:',flang)
+#                    print('final langeuage is:',flang)
                     #translation for keyword extraction
                     transquery= translate_client.translate(query,target_language='en')['translatedText']
-                    print(transquery)
+ #                   print(transquery)
                     transquery=transquery.lower()
                         
 
@@ -345,7 +195,7 @@ while True:
                         (res, usage) = GPT(query)
                               
                         print(res)
-                        print('flang is', flang)
+  #                      print('flang is', flang)
                         text_to_wav(flang,res)
                         print("="*20)
                         print("You have used %s tokens" % usage)
